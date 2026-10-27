@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TSUMUGI TO MARIMO｜映像制作・決済端末導入支援・自社プロダクト開発</title>
+<meta name="description" content="株式会社TSUMUGI TO MARIMOは、企業PR・採用・SNS向けの映像制作、イベント・店舗向けキャッシュレス決済端末の導入・保守支援、自社デジタルプロダクトの開発・運営を行っています。">
+<link rel="canonical" href="https://tsumugitomarimo.com/">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta property="og:title" content="TSUMUGI TO MARIMO｜映像制作・決済端末導入支援・自社プロダクト開発">
+<meta property="og:description" content="映像制作、キャッシュレス決済端末の導入・保守支援、自社プロダクトの開発・運営。人と人、人と地域、人と未来をつなぐ会社です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tsumugitomarimo.com/">
+<meta property="og:site_name" content="TSUMUGI TO MARIMO">
+<meta property="og:image" content="https://tsumugitomarimo.com/img/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"株式会社TSUMUGI TO MARIMO","url":"https://tsumugitomarimo.com/","logo":"https://tsumugitomarimo.com/img/logo.webp","telephone":"080-2667-0439","foundingDate":"2026-07-27","address":{"@type":"PostalAddress","postalCode":"103-0022","addressRegion":"東京都","addressLocality":"中央区","streetAddress":"日本橋室町1-11-12 日本橋水野ビル7階","addressCountry":"JP"}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Cormorant+Garamond:wght@500&display=swap">
+<style>
+/* Layout: 白地に墨と苔色。縦書きの章ラベル＋本文の二段組。章ごとに余白で区切る */
+:root{
+  --paper:#FBFBF8;
+  --white:#FFFFFF;
+  --ink:#1E1F1C;
+  --ink-soft:#5A5D55;
+  --line:#DEDFD8;
+  --moss:#3F5A3A;
+  --moss-pale:#EEF2EB;
+  --f-display:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-num:"Cormorant Garamond","Times New Roman",serif;
+  --wrap:1080px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.9;letter-spacing:.04em;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:.08em}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--white)}
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand img{height:34px;width:auto}
+@media (max-width:640px){.brand img{height:28px}}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:28px}
+.nav a{text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.1em}
+.nav a:hover{color:var(--moss)}
+.nav .nav-cta{background:var(--ink);color:var(--white);padding:8px 18px;border-radius:2px}
+.nav .nav-cta:hover{background:var(--moss);color:var(--white)}
+.menu-btn{display:none;background:none;border:0;padding:10px;margin-right:-10px;cursor:pointer}
+.menu-btn span{display:block;width:26px;height:1.5px;background:var(--ink);margin:6px 0;transition:transform .25s,opacity .25s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+@media (max-width:820px){
+  .menu-btn{display:block}
+  .nav{position:absolute;left:0;right:0;top:64px;background:var(--white);border-bottom:1px solid var(--line)}
+  .nav:not(.open){display:none}
+  .nav ul{flex-direction:column;gap:0;padding:8px max(20px,env(safe-area-inset-right,0px)) 20px max(20px,env(safe-area-inset-left,0px))}
+  .nav li a{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .nav .nav-cta{margin-top:16px;text-align:center;border:0}
+}
+
+/* hero */
+.hero{background:var(--white);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:min(620px,78vh);border-bottom:1px solid var(--line)}
+.hero-img{order:2;width:100%;height:100%;object-fit:cover;max-width:100%;min-height:420px}
+.hero-copy{order:1;display:flex;flex-direction:column;justify-content:center;padding-block:64px;padding-right:56px;padding-left:max(20px,calc((100vw - var(--wrap))/2 + 20px),env(safe-area-inset-left,0px))}
+.hero-copy h1{font-size:clamp(30px,3.6vw,46px);line-height:1.5}
+.hero-copy .eyebrow{font-family:var(--f-num);font-size:13px;letter-spacing:.3em;color:var(--moss);margin:0 0 20px}
+.hero-copy p{margin:18px 0 0;color:var(--ink-soft);font-size:15px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-size:14px;font-weight:500;letter-spacing:.1em;padding:14px 26px;border:1px solid var(--ink);border-radius:2px;transition:background .2s,color .2s}
+.btn-dark{background:var(--ink);color:var(--white)}
+.btn-dark:hover{background:var(--moss);border-color:var(--moss)}
+.btn-line:hover{background:var(--ink);color:var(--white)}
+.btn .arr{font-family:var(--f-num)}
+@media (max-width:820px){
+  .hero{grid-template-columns:minmax(0,1fr);min-height:0}
+  .hero-img{order:1;height:auto;min-height:0;aspect-ratio:4/3}
+  .hero-copy{order:2;padding:40px max(20px,env(safe-area-inset-right,0px)) 48px max(20px,env(safe-area-inset-left,0px))}
+}
+
+/* sections */
+.section{padding-block:120px}
+.section + .section{border-top:1px solid var(--line)}
+.sec-grid{display:grid;grid-template-columns:72px minmax(0,1fr);gap:48px}
+.sec-label{writing-mode:vertical-rl;font-family:var(--f-display);font-size:15px;letter-spacing:.3em;border-left:1px solid var(--ink);padding-left:14px;height:max-content;position:sticky;top:110px}
+.sec-label small{display:block;font-family:var(--f-num);font-size:12px;letter-spacing:.25em;color:var(--ink-soft);margin-right:6px}
+.lead{font-size:clamp(22px,3vw,30px);line-height:1.6;margin-bottom:32px}
+.prose{max-width:38em}
+.prose p{margin:0 0 1.2em}
+@media (max-width:820px){
+  .section{padding-block:80px}
+  .sec-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .sec-label{writing-mode:horizontal-tb;position:static;border-left:0;border-bottom:1px solid var(--ink);padding:0 0 10px;display:flex;align-items:baseline;gap:14px}
+  .sec-label small{display:inline;margin-right:0}
+}
+
+/* works */
+.svc{padding-block:56px;border-top:1px solid var(--line)}
+.svc:first-of-type{border-top:0;padding-top:0}
+.svc-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 24px;align-items:baseline}
+.svc-num{font-family:var(--f-num);font-size:44px;line-height:1;color:var(--moss)}
+.svc-head h3{font-size:clamp(20px,2.4vw,24px);line-height:1.5}
+.svc-head .sub{grid-column:2;margin:0;color:var(--ink-soft);font-size:15px}
+.svc-body{margin-top:24px}
+.svc-body p{margin:0 0 1em;max-width:40em}
+.h-mini{font-family:var(--f-body);font-size:13px;font-weight:700;letter-spacing:.2em;color:var(--moss);margin:32px 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.chips li{font-size:13px;padding:6px 14px;border:1px solid var(--line);background:var(--white);border-radius:999px}
+.pr-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:0;text-decoration:none;background:var(--ink);color:var(--white);max-width:720px}
+.pr-card .poster{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#2c3a2a,#121411);display:grid;place-items:center}
+.pr-card .play{width:64px;height:64px;border-radius:50%;border:1.5px solid rgba(255,255,255,.8);display:grid;place-items:center;transition:transform .2s}
+.pr-card:hover .play{transform:scale(1.08)}
+.pr-card .play::after{content:"";border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:5px}
+.pr-card .meta{padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.pr-card .meta strong{font-weight:500}
+.pr-card .meta span{font-size:13px;opacity:.7}
+.yt{max-width:720px;aspect-ratio:16/9;background:var(--ink)}
+.yt iframe{width:100%;height:100%;border:0;display:block}
+.sns-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:720px}
+.sns-row img{aspect-ratio:9/16;object-fit:cover;width:100%;background:var(--line)}
+.caption{font-size:13px;color:var(--ink-soft);margin-top:10px}
+.pay-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pay-row img{aspect-ratio:3/2;object-fit:cover;width:100%}
+@media (max-width:640px){
+  .pr-card{grid-template-columns:minmax(0,1fr)}
+  .sns-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pay-row{grid-template-columns:minmax(0,1fr)}
+}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.product{background:var(--white);border:1px solid var(--line);padding:26px 24px 24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.product .icon{width:48px;height:48px;border-radius:12px;background:var(--moss-pale);display:grid;place-items:center;overflow:hidden}
+.product .icon img{width:48px;height:48px}
+.product .kind{font-size:12px;letter-spacing:.15em;color:var(--moss);font-weight:700}
+.product h4{margin:0;font-family:var(--f-display);font-size:19px;font-weight:600;letter-spacing:.06em;line-height:1.5}
+.product h4 small{display:block;font-family:var(--f-body);font-size:12px;font-weight:400;color:var(--ink-soft);letter-spacing:.1em}
+.product p{margin:0;font-size:14px;line-height:1.85}
+.product .status{margin-top:auto;padding-top:8px;font-size:12px;color:var(--ink-soft);border-top:1px dashed var(--line)}
+.note{font-size:12px;color:var(--ink-soft);margin-top:16px}
+.tools-img{margin-bottom:28px;aspect-ratio:21/8;object-fit:cover;width:100%}
+@media (max-width:900px){.products{grid-template-columns:minmax(0,1fr)}}
+
+/* news */
+.news{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.news li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 32px;padding:28px 0;border-bottom:1px solid var(--line)}
+.news time{font-family:var(--f-num);font-size:17px;letter-spacing:.1em;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.news h3{font-family:var(--f-body);font-size:16px;font-weight:700;letter-spacing:.05em}
+.news p{margin:8px 0 0;font-size:14px;color:var(--ink-soft)}
+@media (max-width:640px){.news li{grid-template-columns:minmax(0,1fr)}}
+
+/* company */
+.street{width:100%;aspect-ratio:21/9;object-fit:cover;margin-bottom:48px}
+.sign{margin-top:8px;font-family:var(--f-display);font-size:17px}
+.sign small{font-family:var(--f-body);font-size:13px;color:var(--ink-soft);margin-right:12px}
+.info{margin:48px 0 0;display:grid;grid-template-columns:160px minmax(0,1fr);border-top:1px solid var(--line)}
+.info dt,.info dd{margin:0;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px}
+.info dt{font-weight:700;color:var(--ink-soft);font-size:14px}
+@media (max-width:640px){.info{grid-template-columns:minmax(0,1fr)}.info dt{border-bottom:0;padding-bottom:0}.info dd{padding-top:4px}}
+
+/* contact */
+.contact{background:var(--white)}
+form{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;max-width:640px;margin-top:32px}
+.field{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;min-width:0}
+.field label{font-size:14px;font-weight:500}
+.req{font-size:11px;color:var(--white);background:var(--moss);padding:1px 7px;margin-left:8px;border-radius:2px;vertical-align:2px}
+input[type=text],input[type=email],input[type=tel],textarea{font:inherit;font-size:16px;padding:12px 14px;border:1px solid #C9CBC2;background:var(--paper);color:var(--ink);border-radius:2px;width:100%}
+textarea{min-height:180px;resize:vertical}
+.agree{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:14px}
+.agree span{min-width:0}
+.agree input{width:18px;height:18px;accent-color:var(--moss)}
+.form-msg{padding:14px 16px;background:var(--moss-pale);font-size:14px}
+button.btn{font:inherit;font-size:14px;cursor:pointer;justify-self:start}
+
+/* footer */
+.site-footer{background:var(--ink);color:#E9EAE4;padding-block:56px 40px}
+.site-footer .wrap{display:grid;gap:28px}
+.f-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+.f-name{font-family:var(--f-display);font-size:18px;letter-spacing:.1em}
+.f-name small{display:block;font-family:var(--f-body);font-size:12px;opacity:.7;margin-top:6px;letter-spacing:.05em}
+.f-nav{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:0;padding:0;font-size:13px}
+.f-nav a{text-decoration:none;opacity:.85}
+.f-nav a:hover{opacity:1;text-decoration:underline}
+.copy{font-size:12px;opacity:.6;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;margin:0}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="株式会社TSUMUGI TO MARIMO トップへ"><img src="img/logo.webp" alt="株式会社TSUMUGI TO MARIMO ロゴ" width="138" height="34"></a>
+    <button class="menu-btn" id="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+    <nav class="nav" id="nav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="#message">ご挨拶</a></li>
+        <li><a href="#works">私たちの仕事</a></li>
+        <li><a href="#info">お知らせ</a></li>
+        <li><a href="#company">会社情報</a></li>
+        <li><a class="nav-cta" href="#contact">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <img class="hero-img" src="img/hero.webp" alt="ノートとカメラが置かれた打ち合わせのデスク" width="1667" height="943">
+    <div class="hero-copy">
+      <p class="eyebrow">TSUMUGI TO MARIMO</p>
+      <h1>ご縁を紡ぎ、<br>かたちにする。</h1>
+      <p>映像制作、キャッシュレス決済端末の導入・保守支援、自社プロダクトの開発・運営。<br>株式会社TSUMUGI TO MARIMOです。</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#contact">お問い合わせ <span class="arr">→</span></a>
+        <a class="btn btn-line" href="#works">私たちの仕事</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="message">
+    <div class="wrap sec-grid">
+      <h2 class="sec-label">ご挨拶<small>MESSAGE</small></h2>
+      <div class="prose">
+        <p class="lead" style="font-family:var(--f-display);font-weight:600">つながりを、かたちに。</p>
+        <p>株式会社TSUMUGI TO MARIMOは、人と人とのご縁を何よりも大切にしています。出会いから生まれる可能性を信じ、一つひとつのつながりを丁寧に紡いでいくこと。それが私たちの原点です。</p>
+        <p>映像制作、決済端末導入支援、自社プロダクトの開発・運営などを通じて、人と人、人と地域、人と未来をつなぐ架け橋となることを目指しています。</p>
+        <p>信頼が信頼を呼び、ご縁が新たな価値を生み出す。そんな温かく力強いつながりを育みながら、皆さまと共に歩み続けます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="works">
+    <div class="wrap sec-grid">
+      <h2 class="sec-label">私たちの仕事<small>WORKS</small></h2>
+      <div>
+
+        <article class="svc">
+          <div class="svc-head">
+            <span class="svc-num">01</span>
+            <h3>映像コンテンツ制作</h3>
+            <p class="sub">映像で伝え、事業の成長につなげる。</p>
+          </div>
+          <div class="svc-body">
+            <p>企業PR・採用・商品やサービスの紹介・SNS向け動画など、目的に応じた映像コンテンツを制作しています。企画・構成から撮影、編集まで一貫して対応し、企業やサービスの魅力を分かりやすく伝える映像をご提案します。</p>
+            <h4 class="h-mini">対応内容</h4>
+            <ul class="chips">
+              <li>企業PR映像</li><li>採用動画</li><li>商品・サービス紹介</li><li>SNS動画</li><li>イベント撮影・編集</li>
+            </ul>
+            <h4 class="h-mini">制作実績</h4>
+            <div class="yt">
+              <iframe src="https://www.youtube-nocookie.com/embed/xrBsuHPPCvU" title="株式会社Two Seek様 企業PR動画" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="caption">株式会社Two Seek様｜企業PR動画</p>
+            <div style="height:20px"></div>
+            <div class="sns-row">
+              <img src="img/sns-1.webp" alt="Two Seek様SNS動画「新人スタッフがポリッシャーにチャレンジ」のサムネイル" width="600" height="1066" loading="lazy">
+              <img src="img/sns-2.webp" alt="Two Seek様SNS動画「新人スタッフと先輩、二人で頑張る毎日」のサムネイル" width="600" height="1066" loading="lazy">
+              <img src="img/sns-3.webp" alt="Two Seek様SNS動画、スタッフ二人の自己紹介" width="600" height="1058" loading="lazy">
+              <img src="img/sns-4.webp" alt="Two Seek様SNS動画「この汚れ…プロが本気で落とします」のサムネイル" width="535" height="951" loading="lazy">
+            </div>
+            <p class="caption">株式会社Two Seek様｜SNS動画制作</p>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-head">
+            <span class="svc-num">02</span>
+            <h3>決済端末導入支援・保守支援</h3>
+            <p class="sub">イベント・店舗のキャッシュレス環境を、導入から保守まで。</p>
+          </div>
+          <div class="svc-body">
+            <p>フェス・イベント会場や店舗へのキャッシュレス決済端末の導入支援を行っています。国内の大型フェスをはじめ、さまざまな現場で決済端末の導入支援・保守業務に携わってきた経験を活かし、設置・運用サポートから導入後の保守対応まで一貫して支援。安定した決済環境の構築・運用をサポートします。</p>
+            <div class="pay-row" style="margin-top:28px">
+              <img src="img/pay-store.webp" alt="実店舗のレジでキャッシュレス決済端末を使う様子" width="768" height="512" loading="lazy">
+              <img src="img/pay-event.webp" alt="野外イベントの出店でキャッシュレス決済端末を使う様子" width="768" height="512" loading="lazy">
+              <img src="img/pay-support.webp" alt="スタッフが決済端末の点検・トラブル対応をする様子" width="768" height="512" loading="lazy">
+            </div>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-head">
+            <span class="svc-num">03</span>
+            <h3>自社プロダクトの開発・運営</h3>
+            <p class="sub">現場の「あったらいいな」を、自分たちの手でかたちに。</p>
+          </div>
+          <div class="svc-body">
+            <img class="tools-img" src="img/tools.webp" alt="壁に整然と並んだ木工道具" width="1600" height="1085" loading="lazy">
+            <p>日々の業務や制作の現場で感じた課題をもとに、自社でデジタルプロダクトを企画・開発し、運営しています。小さな事業者やクリエイターが、もっと身軽に、もっと楽しく仕事に向き合えるツールやサービスを届けていきます。</p>
+            <h4 class="h-mini">プロダクト</h4>
+            <div class="products">
+              <div class="product">
+                <span class="icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 26 26" fill="none"><rect x="3" y="14" width="4" height="9" fill="#3F5A3A"/><rect x="11" y="8" width="4" height="15" fill="#3F5A3A"/><rect x="19" y="3" width="4" height="20" fill="#3F5A3A"/></svg></span>
+                <span class="kind">EXCEL TEMPLATE</span>
+                <h4>経営管理ダッシュボード</h4>
+                <p>売上・経費・利益などの数字をひと目で把握できる、小規模事業者向けのExcelダッシュボード。会計ソフトほど複雑ではなく、毎月の振り返りにちょうどいい道具を目指しています。</p>
+                <span class="status">販売中</span>
+              </div>
+              <div class="product">
+                <span class="icon"><img src="img/orivimo.png" alt="" width="48" height="48"></span>
+                <span class="kind">VIDEO SOFTWARE</span>
+                <h4>ORIVIMO<small>オリヴィモ</small></h4>
+                <p>撮影した動画とBGMから、AIが編集できる初稿を作り、クリエイターが仕上げるWindows向け動画編集ソフト。素材選びと構成づくりの手間を減らし、演出や仕上げに時間を使えるようにします。</p>
+                <span class="status">クリエイター向けに試用中</span>
+              </div>
+            </div>
+            <p class="note">※各プロダクトは現在、代表個人にて運営しています。順次当社へ移管予定です。</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="info">
+    <div class="wrap sec-grid">
+      <h2 class="sec-label">お知らせ<small>NEWS</small></h2>
+      <ul class="news">
+        <li>
+          <time datetime="2026-07-27">2026.07.27</time>
+          <div>
+            <h3>株式会社TSUMUGI TO MARIMOとしてスタートします。</h3>
+            <p>このたび、TSUMUGI TO MARIMOは株式会社TSUMUGI TO MARIMOとしてスタートいたしました。法人となり、身が引き締まる思いです。皆さまのお役に立てるよう、精進してまいります。</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2026-06-04">2026.06.04</time>
+          <div>
+            <h3>ホームページ仮開設のお知らせ</h3>
+            <p>このたび、TSUMUGI TO MARIMOのホームページを仮開設いたしました。今後、サービス内容や制作実績などの情報を順次更新してまいります。引き続きよろしくお願いいたします。</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="company">
+    <div class="wrap sec-grid">
+      <h2 class="sec-label">会社情報<small>COMPANY</small></h2>
+      <div>
+        <img class="street" src="img/street.webp" alt="人力車が走る古い街並み" width="1600" height="1068" loading="lazy">
+        <div class="prose">
+          <p class="lead" style="font-family:var(--f-display);font-weight:600">ご縁を紡ぎ、未来を結ぶ。</p>
+          <p>はじめまして。TSUMUGI TO MARIMO代表の古閑 靖人です。</p>
+          <p>私はこれまで、多くの方との出会いやご縁に支えられながら歩んできました。その経験の中で強く感じたのは、人とのつながりこそが新しい価値や可能性を生み出すということです。</p>
+          <p>一つひとつのご縁に感謝し、誠実に向き合いながら、皆さまと共に歩んでまいります。今後とも、どうぞよろしくお願いいたします。</p>
+          <p class="sign"><small>代表</small>古閑 靖人</p>
+        </div>
+        <dl class="info">
+          <dt>会社名</dt><dd>株式会社 TSUMUGI TO MARIMO</dd>
+          <dt>代表</dt><dd>古閑 靖人</dd>
+          <dt>創業</dt><dd>2026年7月27日</dd>
+          <dt>所在地</dt><dd>〒103-0022<br>東京都中央区日本橋室町1-11-12 日本橋水野ビル7階</dd>
+          <dt>電話番号</dt><dd>080-2667-0439</dd>
+          <dt>事業内容</dt><dd>映像コンテンツの企画・制作<br>キャッシュレス決済端末の導入支援・保守支援<br>自社デジタルプロダクトの開発・運営</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap sec-grid">
+      <h2 class="sec-label">お問い合わせ<small>CONTACT</small></h2>
+      <div>
+        <p class="prose" style="margin:0">お仕事のご相談・お見積りなど、お気軽にお問い合わせください。2営業日以内にご返信いたします。</p>
+        <form id="contact-form" action="https://formspree.io/f/FORM_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="【HP】お問い合わせがありました">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="field"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-company">会社名</label><input type="text" id="f-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="f-email">メールアドレス<span class="req">必須</span></label><input type="email" id="f-email" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="f-tel">電話番号</label><input type="tel" id="f-tel" name="tel" autocomplete="tel"></div>
+          <div class="field"><label for="f-body">お問い合わせ内容<span class="req">必須</span></label><textarea id="f-body" name="message" required></textarea></div>
+          <label class="agree"><input type="checkbox" id="f-agree" name="agree" value="同意する" required><span><a href="/privacy-policy">プライバシーポリシー</a>に同意する</span><span class="req">必須</span></label>
+          <div class="form-msg" id="form-msg" hidden></div>
+          <button class="btn btn-dark" type="submit">送信する <span class="arr">→</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-top">
+      <p class="f-name" style="margin:0">株式会社 TSUMUGI TO MARIMO<small>〒103-0022 東京都中央区日本橋室町1-11-12 日本橋水野ビル7階</small></p>
+      <ul class="f-nav">
+        <li><a href="#message">ご挨拶</a></li>
+        <li><a href="#works">私たちの仕事</a></li>
+        <li><a href="#info">お知らせ</a></li>
+        <li><a href="#company">会社情報</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="/privacy-policy">プライバシーポリシー</a></li>
+      </ul>
+    </div>
+    <p class="copy">© 2026 TSUMUGI TO MARIMO Inc.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
+  function setOpen(o){nav.classList.toggle('open',o);btn.setAttribute('aria-expanded',o?'true':'false');btn.setAttribute('aria-label',o?'メニューを閉じる':'メニューを開く');}
+  btn.addEventListener('click',function(){setOpen(!nav.classList.contains('open'));});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false);});
+
+  var form=document.getElementById('contact-form'), msg=document.getElementById('form-msg'), sendBtn=form.querySelector('button[type=submit]');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var missing=[];
+    if(!form.elements.name.value.trim())missing.push('お名前');
+    if(!/^\S+@\S+\.\S+$/.test(form.elements.email.value.trim()))missing.push('メールアドレス');
+    if(!form.elements.message.value.trim())missing.push('お問い合わせ内容');
+    if(!document.getElementById('f-agree').checked)missing.push('プライバシーポリシーへの同意');
+    msg.hidden=false;
+    if(missing.length){msg.textContent='次の項目を確認してください：'+missing.join('、');return;}
+    sendBtn.disabled=true; msg.textContent='送信しています…';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+      .then(function(r){if(!r.ok)throw new Error(r.status);form.reset();msg.textContent='送信しました。2営業日以内にご返信いたします。';})
+      .catch(function(){msg.textContent='送信できませんでした。お手数ですが、時間をおいて再度お試しいただくか、お電話（080-2667-0439）でご連絡ください。';})
+      .finally(function(){sendBtn.disabled=false;});
+  });
+})();
+</script>
+</body>
+</html>
