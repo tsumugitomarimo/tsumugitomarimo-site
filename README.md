@@ -1,10 +1,5 @@
 # tsumugitomarimo.com
 
-株式会社TSUMUGI TO MARIMO のコーポレートサイト。HTML/CSSのみの静的サイトで、Cloudflare Pages で配信しています。
+株式会社TSUMUGI TO MARIMO のコーポレートサイトです（HTML/CSSのみの静的サイト、GitHub Pagesで公開）。
 
-- `index.html` トップページ（全セクション）
-- `privacy-policy.html` プライバシーポリシー（/privacy-policy で表示）
-- `404.html` ページが見つからないとき
-- `img/` 画像
-
-お問い合わせフォームは Formspree 経由でメールに届きます（index.html の form の action）。
+**運用方法・設定内容・トラブル対応は [CLAUDE.md（運用マニュアル）](CLAUDE.md) にまとめています。**
